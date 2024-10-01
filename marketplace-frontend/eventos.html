@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MarketplaceGrupo2</title>
+        <style>
+         .cuadrado {
+              border: 1px solid black;
+              width: 5em;
+              height: 5em;
+         }
+            .rojo {
+              background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+     <h1>DOM</h1>
+        <h2>Ejemplo cuadrado</h2>
+        <button id="boton1">agregar</button>
+        <div class="cuadrado rojo"></div>
+
+        <script> //para escribir codigo javascript (interacción con objetos)
+            const agregar = document.getElementById('boton1')
+            const body = document.getElementsByTagName('body')[0] //es un array que me quedo con la posición 0, asi que cuando el user da en el boton, ademas de crear el nuevo div con los estilos tambien crea el body
+
+            const callback = () => {
+                const nuevoDiv = document.createElement('div')
+                nuevoDiv.classList.add('cuadrado')
+                nuevoDiv.classList.add('rojo')
+
+                nuevoDiv.addEventListener('click', (event) => { //recibe al evento en si mismo
+                    event.target.remove()
+                }) 
+
+                body.appendChild(nuevoDiv)
+                console.log(nuevoDiv)
+            } 
+
+            agregar.addEventListener('click', callback) //el boton "boton1" espera una interacción del usuario, cuando hace click o otra cosa hace un call back
+
+            console.log(agregar)
+        </script>
+
+    </body>
+</html>
