@@ -1,0 +1,34 @@
+input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 0.5em;
+  width: 300px;
+  background-color: #fff;
+}
+
+#icono-buscador {
+  color: #888;
+  margin-right: 0.5em;
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1em;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* Estilos opcionales para hacer la barra de búsqueda más visualmente atractiva */
+input-wrapper:hover {
+  border-color: #000;
+}
+
+input-wrapper:focus-within {
+  border-color: #000;
+}
