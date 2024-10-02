@@ -1,0 +1,74 @@
+header {
+    background-color: rgb(255, 255, 255);
+    padding: 1.8em;
+    border-bottom: 0.1em solid black;
+}
+
+.container {
+    max-width: 130em;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10em;
+}
+
+.container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container nav .logo {
+    color: rgb(56, 56, 56);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.container .nav-link {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.container .nav-link a {
+    margin: 0 4em;
+    list-style: none;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/*estilos para la searchbar*/
+
+.container nav .input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 0.5em;
+    width: 300px;
+    background-color: #ffffff;
+  }
+  
+  #icono-buscador {
+    color: #000000;
+    margin-right: 0.5em;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1em;
+    
+  }
+  
+  input::placeholder {
+    color: #000000;
+  }
+  
+  input-wrapper:hover {
+    border-color: #ffffff;
+  }
+  
+  input-wrapper:focus-within {
+    border-color: #ffffff;
+  }
