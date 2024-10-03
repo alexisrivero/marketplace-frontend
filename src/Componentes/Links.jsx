@@ -1,4 +1,5 @@
 import "./Links.css"
+import { MdMenu } from "react-icons/md";
 
 const Links = () => {
     return (
@@ -6,6 +7,7 @@ const Links = () => {
             <nav>
                 <ul>
                     <li>
+                        <a href="/categories"><MdMenu size={23}/></a>
                         <a href="/categories">Categories</a>
                     </li>
                     <li>
