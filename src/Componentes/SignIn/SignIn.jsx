@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import signUpImage from '../assets/signUp.png';
-import './SignUp.css';
+import signUpImage from '../../assets/signUp.png';
+import './SignIn.css';
 
 
-const SignUp = () => {
+const SignIn = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        lastName:'',
         email: '',
         password: '',
-
     });
 
     const handleChange = (e) => {
@@ -27,35 +24,13 @@ const SignUp = () => {
     };
 
     return (
-        <div className='signup-container'>
-            <div className="signup-image">
+        <div className='signin-container'>
+            <div className="signin-image">
                 <img src={signUpImage} alt="signup" />
             </div>
             <div className="form-container">
-                <h2>Crear una cuenta nueva</h2>
+                <h2>Iniciar sesión</h2>
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name">Nombre:</label>
-                        <input
-                            type="name"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="lastName">Apellido:</label>
-                        <input
-                            type="lastName"
-                            id="lastName"
-                            name="lastName"
-                            value={formData.lastName}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
                     <div>
                         <label htmlFor="email">Email:</label>
                         <input
@@ -78,11 +53,15 @@ const SignUp = () => {
                             required
                         />
                     </div>
-                    <button type="submit">Registrarse</button>
+                    <button type="submit">Iniciar sesión</button>
                 </form>
+                <div className='signup-container'>
+                    <p>¿No tienes cuenta?</p>
+                    <a href="/sign-up">Regístrate aquí</a>
+                </div>
             </div>
         </div>
     );
 };
 
-export default SignUp;
+export default SignIn;

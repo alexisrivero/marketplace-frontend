@@ -4,10 +4,13 @@
 }
 
 .signup-image{
-    width: 60%;
+    width: 70%;
+    background-color: #cae3e8;
+    display: flex;
+    justify-content: left;
 }
 .signup-image img{
-    width: 100%;
+    width: 70%;
 }
 
 .form-container{
@@ -44,4 +47,16 @@
 }
 .form-container form button:hover{
     background-color: #333;
+}
+.signin-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+}
+.signin-container a{
+    padding-left: 0.5em;
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
 }

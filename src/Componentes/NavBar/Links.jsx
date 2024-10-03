@@ -17,7 +17,7 @@ const Links = () => {
                         <a href="/about">Sobre nosotros</a>
                     </li>
                     <li>
-                        <a href="/signup">Registrarse</a>
+                        <a href="/sign-up">Registrarse</a>
                     </li>
                 </ul>
             </nav>
