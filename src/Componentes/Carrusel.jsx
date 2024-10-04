@@ -21,18 +21,20 @@ const Carrusel = ({slides}) => {
     }
 
     return (
-        <div className="sliderStyle">
-            <div className="flechaIzq" onClick = {izquierda}>
-                <IoIosArrowBack />
+        <div className="conteiner">
+            <div className="sliderStyle">
+                <div className="flechaIzq" onClick = {izquierda}>
+                    <IoIosArrowBack />
+                </div>
+                <div className="flechaDer"  onClick = {derecha}>
+                    <IoIosArrowForward />
+                </div>
+                <div
+                    className="slideStyle"
+                    style={{ backgroundImage: `url(${slides[index].url})` }}
+                ></div>
             </div>
-            <div className="flechaDer"  onClick = {derecha}>
-                <IoIosArrowForward />
-            </div>
-            <div
-                className="slideStyle"
-                style={{ backgroundImage: `url(${slides[index].url})` }}
-            ></div>
-      </div>
+        </div>
     )
 }
 

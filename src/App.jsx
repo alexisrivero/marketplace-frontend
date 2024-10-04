@@ -13,12 +13,6 @@ function App() {
     {url: "http://localhost:5173/image3.jpg", title: "Publicidad3"}
   ]
 
-  const conteinerStyle = {
-    width: '500px',
-    height: '280px',
-    margin: '0px auto'
-  }
-
   return (
     <Router>
       <Navbar />
