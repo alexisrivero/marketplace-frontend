@@ -8,16 +8,16 @@ const Links = () => {
                 <ul>
                     <li>
                         <a href="/categories"><MdMenu size={23}/></a>
-                        <a href="/categories">Categories</a>
+                        <a href="/categories">Categorias</a>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="/contact">Contacto</a>
                     </li>
                     <li>
-                        <a href="/about">About</a>
+                        <a href="/about">Sobre nosotros</a>
                     </li>
                     <li>
-                        <a href="/Signup">Sign Up</a>
+                        <a href="/sign-up">Registrarse</a>
                     </li>
                 </ul>
             </nav>

@@ -2,6 +2,7 @@ import "./Navbar.css"
 import {FaSearch} from "react-icons/fa"
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { LuHeart } from "react-icons/lu";
+import Links from "./Links";
 
 const Navbar = () => {
     return (
@@ -13,7 +14,7 @@ const Navbar = () => {
                     </div>
                     <div className="input-wrapper">
                 <       FaSearch id = "icono-buscador" />
-                        <input type="text" placeholder="Type to search..." />
+                        <input type="text" placeholder="Buscar producto..." />
                      </div>
                     <div className="nav-link">
                         <a href="/carrito">
@@ -25,6 +26,7 @@ const Navbar = () => {
                     </div>
                 </nav>
             </div>
+            <Links/>
         </header>
     )
 }
