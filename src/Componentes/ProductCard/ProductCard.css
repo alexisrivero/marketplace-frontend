@@ -1,0 +1,35 @@
+.product-card{
+    margin: 1em;
+    padding: 1em;
+    background-color: #f8f8f8;
+    width: 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.product-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h2{
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.product-card p{
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.product-card a{
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s;
+}

@@ -10,7 +10,9 @@ const Navbar = () => {
             <div className='container'>
                 <nav>
                     <div className='logo'>
+                        <a href="/">
                         <h2>Marketplace Grupo 2</h2>
+                        </a>
                     </div>
                     <div className="input-wrapper">
                 <       FaSearch id = "icono-buscador" />
@@ -20,7 +22,7 @@ const Navbar = () => {
                         <a href="/carrito">
                             <AiOutlineShoppingCart size={30} />
                         </a>
-                        <a href="/corazon">
+                        <a href="/favoritos">
                             <LuHeart size={30}/>
                         </a>
                     </div>
