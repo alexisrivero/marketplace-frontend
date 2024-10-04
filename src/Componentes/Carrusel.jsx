@@ -1,17 +1,38 @@
-import image1 from '../assets/image1.jpg';
-import image2 from '../assets/image2.jpg';
-import image3 from '../assets/image3.jpg';
+import { useState } from "react"
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import './Carrusel.css'
 
-const Carrusel = () => {
+const Carrusel = ({slides}) => {
+    
+    //useState Hook
+    const [index, indexUser] = useState(0);
 
-    const images  = [
-        image1,
-        image2,
-        image3
-    ]
+    const izquierda = () => {
+        const primerSlide = index === 0
+        const nuevoIndice = primerSlide ? slides.lenght - 1 : index - 1  
+        indexUser(nuevoIndice)
+    }
+    
+    const derecha = () => {
+        const ultimoSlide = index === slides.lenght - 1
+        const nuevoIndice = ultimoSlide ? 0 : index + 1  
+        indexUser(nuevoIndice)
+    }
 
     return (
-        images
+        <div className="sliderStyle">
+            <div className="flechaIzq" onClick = {izquierda}>
+                <IoIosArrowBack />
+            </div>
+            <div className="flechaDer"  onClick = {derecha}>
+                <IoIosArrowForward />
+            </div>
+            <div
+                className="slideStyle"
+                style={{ backgroundImage: `url(${slides[index].url})` }}
+            ></div>
+      </div>
     )
 }
 
