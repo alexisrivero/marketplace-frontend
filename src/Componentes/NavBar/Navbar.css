@@ -22,6 +22,10 @@ header {
     font-size: 1.5em;
     cursor: pointer;
 }
+.container nav .logo a {
+    color: rgb(56, 56, 56);
+    text-decoration: none;
+}
 
 .container .nav-link {
     display: flex;

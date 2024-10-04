@@ -1,0 +1,11 @@
+.product-list{
+    margin: 1em;
+    padding: 1em;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.product-list .products{
+    display: flex;
+    flex-wrap: wrap;
+}
