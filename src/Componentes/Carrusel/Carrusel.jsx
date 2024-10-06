@@ -10,12 +10,12 @@ const Carrusel = ({slides}) => {
 
     const izquierda = () => {
         const primerSlide = index === 0
-        const nuevoIndice = primerSlide ? slides.lenght - 1 : index - 1  
+        const nuevoIndice = primerSlide ? slides.length - 1 : index - 1;
         indexUser(nuevoIndice)
     }
     
     const derecha = () => {
-        const ultimoSlide = index === slides.lenght - 1
+        const ultimoSlide = index === slides.length - 1
         const nuevoIndice = ultimoSlide ? 0 : index + 1  
         indexUser(nuevoIndice)
     }

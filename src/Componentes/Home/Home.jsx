@@ -7,7 +7,9 @@ const Home = () => {
     const slides = [
         {url: "http://localhost:5173/image1.jpg", title: "Publicidad1"},
         {url: "http://localhost:5173/image2.jpg", title: "Publicidad2"},
-        {url: "http://localhost:5173/image3.jpg", title: "Publicidad3"}
+        {url: "http://localhost:5173/image3.jpg", title: "Publicidad3"},
+        {url: "http://localhost:5173/image4.jpg", title: "Publicidad4"},
+        {url: "http://localhost:5173/image5.jpg", title: "Publicidad5"}
     ]
     
     const conteinerStyle = {
