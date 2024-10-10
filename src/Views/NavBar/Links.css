@@ -6,8 +6,7 @@
 
 .links nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
 .links nav ul {
@@ -22,9 +21,40 @@
     margin-left: 2em;
     color: black;
     font-size: large;
+    cursor: pointer;
 }
 
 .links nav ul li a {
     text-decoration: none;
     color: black;
 }
+
+.links nav ul li :hover {
+    color: rgb(100, 100, 100);
+}
+
+.dropdown{
+    display: flex;
+    padding: 0.5em;
+}
+
+.dropdown li{
+    display: flex;
+    justify-content: left;
+    margin-left: 2em;
+    color: black;
+    font-size: large;
+    cursor: pointer;
+}
+.dropdown li a{
+    text-decoration: none;
+    color: black;
+}
+.dropdown li :hover{
+    color: rgb(100, 100, 100);
+}
+
+
+
+
+
