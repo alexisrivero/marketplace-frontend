@@ -17,6 +17,7 @@ const Home = () => {
         height: '280px',
         margin: '0px auto'
     }
+
     const products = [
         {
             image: "https://images.fravega.com/f300/d504221275bde1ac2409394cf4455e3c.jpg.webp",
