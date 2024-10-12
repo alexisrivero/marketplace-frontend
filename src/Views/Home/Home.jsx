@@ -1,6 +1,7 @@
 import Carrusel from '../../Componentes/Carrusel/Carrusel';
 import ProductList from "../../Componentes/ProductList/ProductList";
 import './Home.css';
+import React, {useEffect, useState} from 'react';
 
 
 const Home = () => {
@@ -11,12 +12,17 @@ const Home = () => {
         {url: "http://localhost:5173/image4.jpg", title: "Publicidad4"},
         {url: "http://localhost:5173/image5.jpg", title: "Publicidad5"}
     ]
+
+    const [data, setData] = useState([]);
+
+    const URL = 'http://localhost:8080/product';
     
     const conteinerStyle = {
         width: '500px',
         height: '280px',
         margin: '0px auto'
     }
+<<<<<<< HEAD
 
     const products = [
         {
@@ -38,11 +44,23 @@ const Home = () => {
             price: 300
         }
     ]
+=======
+    
+
+    useEffect(() => {
+        fetch(URL)
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
+    
+
+>>>>>>> db7a8b10bac7227baee9cc608a11d04ed590002e
 
     return (
         <div>
             <Carrusel slides={slides} />
-            <ProductList products={products} />
+            <ProductList products={data} />
         </div>
     )
 }
