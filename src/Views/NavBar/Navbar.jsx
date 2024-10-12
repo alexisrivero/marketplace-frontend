@@ -15,7 +15,7 @@ const Navbar = () => {
                         </a>
                     </div>
                     <div className="input-wrapper">
-                <       FaSearch id = "icono-buscador" />
+                <FaSearch id = "icono-buscador" />
                         <input type="text" placeholder="Buscar producto..." />
                      </div>
                     <div className="nav-link">
@@ -28,7 +28,7 @@ const Navbar = () => {
                     </div>
                 </nav>
             </div>
-            <Links/>
+            <Links />
         </header>
     )
 }

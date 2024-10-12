@@ -1,5 +1,5 @@
-import Carrusel from "../Carrusel/Carrusel";
-import ProductList from "../ProductList/ProductList";
+import Carrusel from '../../Componentes/Carrusel/Carrusel';
+import ProductList from "../../Componentes/ProductList/ProductList";
 import './Home.css';
 
 
