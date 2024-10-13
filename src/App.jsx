@@ -5,7 +5,7 @@ import Home from './Views/Home/Home';
 import SignUp from './Views/SignUp/SignUp';
 import SignIn from './Views/SignIn/SignIn';
 import Footer from './Views/Footer/Footer';
-
+import Contacto from './Views/Contacto/Contacto';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
-        
+        <Route path="/contact" element={<Contacto />} />
       </Routes>
       <Footer />
       </>

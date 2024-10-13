@@ -1,3 +1,84 @@
-.a {
-    background-color: aqua;
+.container-principal {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.container-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contacto h2 {
+    font-size: 2em;
+    color: grey;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.contacto form {
+    width: 600px;
+    text-align: center;
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.campo {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+    
+.input-box .input-campo {
+    width: 50%;
+}
+
+.campo .item {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid;
+    outline: none;
+    border-radius: 6px;
+    color: black;
+    margin: 20px;
+}
+
+.campo .item::placeholder {
+    color: grey
+}
+
+.campo .error-txt {
+    font-size: 14.5px;
+    color: red;
+    margin: -5px 1 5px;
+    display: none;
+}
+
+form .area-texto .item {
+    resize: none;
+}
+
+form .area-texto .error-txt {
+    margin-top: -10px;
+}
+
+form button {
+    padding: 12px 32px;
+    background-color: grey;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+

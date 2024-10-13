@@ -22,7 +22,6 @@ const Home = () => {
         height: '280px',
         margin: '0px auto'
     }
-<<<<<<< HEAD
 
     const products = [
         {
@@ -44,8 +43,6 @@ const Home = () => {
             price: 300
         }
     ]
-=======
-    
 
     useEffect(() => {
         fetch(URL)
@@ -55,7 +52,6 @@ const Home = () => {
     }, []);
     
 
->>>>>>> db7a8b10bac7227baee9cc608a11d04ed590002e
 
     return (
         <div>
