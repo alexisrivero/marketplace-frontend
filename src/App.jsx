@@ -19,7 +19,7 @@ function App() {
         <Route path="/contact" element={<Contacto />} />
       </Routes>
       <Footer />
-      </>
+    </>
   ); 
 }
 

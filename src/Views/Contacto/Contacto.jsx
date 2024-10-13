@@ -22,7 +22,7 @@ const Contacto = () => {
             },
           );
           e.target.reset()
-      };
+    };
 
     return (
         <section className='container-principal'>
