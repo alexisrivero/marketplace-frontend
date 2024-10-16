@@ -2,11 +2,11 @@ import ProductCard from "../ProductCard/ProductCard";
 import './ProductList.css';
 
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, titulo }) => {
     return (
         <div className="product-list">
             <div className="list-name">
-                <h2>Productos</h2>
+                <h2>{titulo}</h2>
             </div>
             <div className="products">
                 {products.map(product => (

@@ -23,8 +23,11 @@ const Home = () => {
 
     const [data, setData] = useState([]);
 
+    const [data2, setData2] = useState([]);
+
     const URL = 'http://localhost:8080/product';
-    
+
+    const URL2 = 'http://localhost:8080/product/brand/BGH';
 
     useEffect(() => {
         fetch(URL)
@@ -33,14 +36,20 @@ const Home = () => {
         .catch(error => console.error('Error fetching data:', error));
     }, []);
     
+    useEffect(() => {
+        fetch(URL2)
+        .then(response => response.json())
+        .then(data2 => setData2(data2))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
 
 
     return (
         <div>
             <Carrusel slides={slides} />
-            <ProductList products={data} />
+            <ProductList products={data} titulo = 'Productos principales' />
             <Carrusel2 slides2={slides2} />
-            <ProductList products={data} />
+            <ProductList products={data2} titulo = 'Productos destacados BGH' />
         </div>
     )
 }
