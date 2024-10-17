@@ -35,8 +35,8 @@ const Product = () => {
                 <div className="product-details">
                     <h2 className="product-name">{data.name}</h2>
                     <p className="product-price">${data.price}</p>
-                    <p className='product-brand'>{data.brand}</p>
                     <p className='product-category'>{data.category}</p>
+                    <p className='product-brand'>{data.brand}</p>
                     <p className='product-description'>{data.description}</p>
                 </div>
                 <div className='quantity-container'>

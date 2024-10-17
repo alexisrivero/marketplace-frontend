@@ -8,6 +8,7 @@ import Footer from './Views/Footer/Footer';
 import Contacto from './Views/Contacto/Contacto';
 import AboutUs from './Views/AboutUs/Aboutus';
 import Product from './Views/Product/Product';
+import Category from './Views/Category/Category';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contacto />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="/category/:category" element={<Category />} />
       </Routes>
       <Footer />
     </>
