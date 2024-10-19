@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import signUpImage from '../../assets/signUp.png';
 import './SignIn.css';
 
@@ -8,7 +9,10 @@ const SignIn = () => {
         email: '',
         password: '',
     });
-
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -17,10 +21,30 @@ const SignIn = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form data submitted:', formData);
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/auth/authenticate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Login failed');
+            }
+
+            const data = await response.json();
+            localStorage.setItem('token', data.access_token);
+            
+            navigate(location.state?.from ? location.state.from : '/');
+
+        } catch (error) {
+            setError('Error al iniciar sesión. Por favor, verifica tus credenciales.');
+        }
     };
 
     return (
@@ -53,6 +77,7 @@ const SignIn = () => {
                             required
                         />
                     </div>
+                    {error && <p className="error">{error}</p>}
                     <button type="submit">Iniciar sesión</button>
                 </form>
                 <div className='signup-container'>

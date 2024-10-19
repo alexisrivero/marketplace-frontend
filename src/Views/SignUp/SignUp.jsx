@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import signUpImage from '../../assets/signUp.png';
 import './SignUp.css';
 
@@ -10,7 +11,12 @@ const SignUp = () => {
         email: '',
         password: '',
         phoneNumber: '',
+        role: 'USER',
     });
+
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,10 +26,29 @@ const SignUp = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form data submitted:', formData);
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Sign up failed');
+            }
+
+            const data = await response.json();
+            localStorage.setItem('token', data.access_token);
+            
+            navigate('/');
+
+        } catch (error) {
+            setError('Error al registrarse. Por favor, verifica tus credenciales.');
+        }
     };
 
     return (
@@ -89,6 +114,7 @@ const SignUp = () => {
                             required
                         />
                     </div>
+                    {error && <p className="error">{error}</p>}
                     <button type="submit">Registrarse</button>
                 </form>
                 <div className='signup-container'>

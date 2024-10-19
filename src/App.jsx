@@ -9,6 +9,8 @@ import Contacto from './Views/Contacto/Contacto';
 import AboutUs from './Views/AboutUs/Aboutus';
 import Product from './Views/Product/Product';
 import Category from './Views/Category/Category';
+import Carrito from './Views/Carrito/Carrito';
+import PrivateRoute from './Componentes/PrivateRoute/PrivateRoute';
 
 function App() {
 
@@ -23,6 +25,10 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/category/:category" element={<Category />} />
+        <Route path="/carrito" element={<PrivateRoute />}>
+          <Route path='' element={<Carrito />} />
+        </Route>
+
       </Routes>
       <Footer />
     </>
