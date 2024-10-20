@@ -1,12 +1,13 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import './Carrusel2.css'
 
 const Carrusel2 = ({slides2}) => {
     
-    //useState Hook
     const [index, indexUser] = useState(0);
+    const navigate = useNavigate();
 
     const izquierda = () => {
         const primerSlide = index === 0
@@ -20,6 +21,15 @@ const Carrusel2 = ({slides2}) => {
         indexUser(nuevoIndice)
     }
 
+    const handleClick = () => {
+        const productURL = slides2[index].productURL;
+        if (productURL) {
+            navigate(productURL); 
+        } else {
+            console.error("No product URL found for this slide.");
+        }
+    };
+
     return (
         <div className="conteiner2">
             <div className="sliderStyle">
@@ -32,6 +42,7 @@ const Carrusel2 = ({slides2}) => {
                 <div
                     className="slideStyle"
                     style={{ backgroundImage: `url(${slides2[index].url})` }}
+                    onClick={handleClick} 
                 ></div>
             </div>
         </div>
