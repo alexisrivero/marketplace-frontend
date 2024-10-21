@@ -50,7 +50,7 @@ const Links = () => {
                             <ul className="dropdown" onMouseOver={showDropdown} onMouseLeave={hideDropdown}>
                                 {categories.map(category => (
                                     <li key={category.id}>
-                                        <a href={`/category/${category}`}>{category}</a>
+                                        <a href={`/category/${category.categoryName}`}>{category.categoryName}</a>
                                     </li>
                                 ))}
                             </ul>

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 const Carrito = () => {
     const URL = 'http://localhost:8080/checkout';
     const [data, setData] = useState([]);
+    const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch(URL, {
             headers: {
@@ -16,6 +17,11 @@ const Carrito = () => {
     }, []);
     console.log(data);
     
+    const handleDelete = (productId) => {
+        const updatedProducts = data.checkoutProducts.filter(product => product.id !== productId);
+        setData(updatedProducts);
+    };
+
     return (
         <div className='carrito'>
             <div className='lista-carrito'>
@@ -38,6 +44,9 @@ const Carrito = () => {
                                 <td>${product.price}</td>
                                 <td>{product.quantity}</td>
                                 <td>${(product.price*product.quantity).toFixed(2)}</td>
+                                <td>
+                                    <button className='delete' onClick={() => handleDelete(product.id)}>Eliminar</button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
