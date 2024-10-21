@@ -58,7 +58,7 @@ const Carrito = () => {
         })
         .catch(error => console.error('Error updating quantity:', error));
     };
-
+    
     const calculateDiscountPercentage = () => {
         if (data.subTotal === 0) return 0;
         return ((data.subTotal - data.total) / data.subTotal) * 100;
@@ -114,11 +114,13 @@ const Carrito = () => {
                     <div className='subtotal'>
                         <p>Subtotal:</p>
                         <p>${data.subTotal.toFixed(2)}</p>
-                    </div>
-                    <div className='subtotal'>
-                        <p>Descuento:</p>
-                        <p>{calculateDiscountPercentage().toFixed(2)}%</p>
-                    </div>
+                    </div> 
+                    {calculateDiscountPercentage() > 0 && (
+                        <div className='subtotal'>
+                            <p>Descuento:</p>
+                            <p>{calculateDiscountPercentage().toFixed(2)}%</p>
+                        </div>
+                    )}
                     <div className='subtotal'>
                         <p>Envio:</p>
                         <p>Gratis</p>
@@ -129,7 +131,7 @@ const Carrito = () => {
                     </div>
                     <div className='button'>
                         <button className='comprar'>
-                            <a href="/billing-info">
+                            <a href="/carrito/billing-info">
                             Proceder a comprar
                             </a>
                         </button>  
