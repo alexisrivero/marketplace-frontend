@@ -28,6 +28,27 @@ const Product = () => {
         }
     };
 
+    const addProductURL = 'http://localhost:8080/checkout/product';
+    const product = {
+        id: data.id,
+        quantity: quantity,
+    };
+
+    const handleAddToCart = () => {
+        fetch(addProductURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+            body: JSON.stringify(product),
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(error => console.error('Error:', error));
+
+    }
+
     return (
         <div className="product">
             <img src={data.imageRoute} alt={data.name} className="product-image" />
@@ -52,7 +73,7 @@ const Product = () => {
                         />
                         <button onClick={handleIncrement}>+</button>
                     </div>
-                    <button className='add-to-cart'>Agregar al carrito</button>
+                    <button className='add-to-cart' onClick={handleAddToCart}>Agregar al carrito</button>
                 </div>
             </div>
         </div>

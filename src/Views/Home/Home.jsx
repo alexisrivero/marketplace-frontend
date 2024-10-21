@@ -1,5 +1,5 @@
 import Carrusel from '../../Componentes/Carrusel/Carrusel';
-import Carrusel2 from '../../Componentes/Carrusel2/Carrusel2';
+
 import ProductList from "../../Componentes/ProductList/ProductList";
 import './Home.css';
 import React, {useEffect, useState} from 'react';
@@ -29,17 +29,10 @@ const Home = () => {
 
     const [data2, setData2] = useState([]);
 
-    const [dataCarrusel, setDataCarrusel] = useState([]);
 
-    const [dataCarrusel2, setDataCarrusel2] = useState([]);
+    const URL = 'http://localhost:8080/product';
 
-    const URL = 'http://localhost:8080/product/category/Lavarropas';
-
-    const URLCarrusel1 = 'http://localhost:8080/product';
-
-    const URLCarrusel2 = 'http://localhost:8080/product';
-
-    const URL2 = 'http://localhost:8080/product/category/Aires Acondicionados';
+    const URL2 = 'http://localhost:8080/product';
 
     useEffect(() => {
         fetch(URL)
@@ -55,25 +48,13 @@ const Home = () => {
         .catch(error => console.error('Error fetching data:', error));
     }, []);
 
-    useEffect(() => {
-        fetch(URLCarrusel1)
-            .then(response => response.json())
-            .then(data => setDataCarrusel(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
 
-    useEffect(() => {
-        fetch(URLCarrusel2)
-            .then(response => response.json())
-            .then(data => setDataCarrusel2(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
 
     return (
         <div>
             <Carrusel slides={slides} />
             <ProductList products={data} titulo = 'Lavarropas de calidad' />
-            <Carrusel2 slides2={slides2} />
+            <Carrusel slides={slides2} />
             <ProductList products={data2} titulo = 'Lo mejor para este verano' />
         </div>
     )
