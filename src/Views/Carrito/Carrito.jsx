@@ -242,7 +242,7 @@ const Carrito = () => {
                             <th>Precio</th>
                             <th>Cantidad</th>
                             <th>Subtotal</th>
-                            <th>Acciones</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -391,7 +391,7 @@ const Carrito = () => {
                         </form>)}
                 </div>
             </div>
-            <div className='container-precio-total'>
+            
                 <div className='precio-total'>
                     <h3>Resumen de compra</h3>
                     <div className='subtotal'>
@@ -416,7 +416,7 @@ const Carrito = () => {
                         <button className='comprar'>Comprar</button>  
                     </div>  
                 </div>
-            </div>
+            
             </div>
         </div>
     );
