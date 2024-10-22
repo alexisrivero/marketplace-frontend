@@ -39,11 +39,12 @@ a {
 
 .container-precio-total {
     display: flex;
-    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    justify-content: flex-end;
+    
 }
 
 .precio-total {
-    width: 40%;
+    height: 60%;
     background-color: #f2f2f2;
     border-radius: 5px;
     border-width: 1px;
@@ -104,4 +105,113 @@ button {
 button:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.billing-information {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.billing-tittle{
+    margin-top: 10px;
+    margin-left: 2em;
+}
+.billing-information h1, .billing-information h2 {
+    margin-bottom: 10px;
+}
+
+.billing-information ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.billing-information li {
+    margin-bottom: 5px;
+}
+
+.billing-information .add-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(255, 202, 56);
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.billing-information .add-address:hover {
+    background-color: rgb(245, 194, 55);
+}
+
+
+.billing-information form {
+    margin-top: 10px;
+}
+
+.billing-information input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.format-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.payment-method{
+    margin-top: 30px;
+}
+.address-list {
+    margin-bottom: 20px;
+}
+
+.address-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.address-item:hover {
+    background-color: #f0f0f0;
+}
+
+.address-item.selected {
+    background-color: #d0eaff;
+    border-color: #007bff;
+}
+
+.address-list, .payment-method-list {
+    margin-bottom: 20px;
+}
+
+.address-item, .payment-method-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.address-item:hover, .payment-method-item:hover {
+    background-color: #f0f0f0;
+}
+
+.address-item.selected, .payment-method-item.selected {
+    background-color: #d0eaff;
+    border-color: #007bff;
+}
+
+.billing-table {
+    margin-left: 3em;
+    width: 50%;
+    margin-bottom: 0;
+}
+.billing-resume{
+    margin-left: 3em;
+    
 }

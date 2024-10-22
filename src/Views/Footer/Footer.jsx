@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="content">
             <Link to="/sign-up">Registrate</Link>
             </div>
-            <p>Obtene un 10% de descuento en tu primera compra</p>
+            <p>Obtene un 15% de descuento en tu primera compra</p>
         </div>
         <div className="contact-container">
             <div className="tittle">
