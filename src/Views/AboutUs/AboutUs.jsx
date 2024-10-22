@@ -19,7 +19,7 @@ const AboutUs = () => {
             <div className='container-sobrenos'>
                 <section className='sobrenos'>
                     <div className='imagen'>
-                        <img src="public/aboutus.jpg"/>
+                        <img src="https://res.cloudinary.com/dbwr86wxd/image/upload/v1729636717/aboutus_kut2u8.jpg"/>
                     </div>
                     <div className='contenido'>
                         <h2>MARKETPLACE</h2>

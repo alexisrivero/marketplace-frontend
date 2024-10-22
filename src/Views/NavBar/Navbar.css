@@ -9,10 +9,6 @@ header {
     padding: 0;
 }
 
-.Searchbar-container {
-  align-items: center;
-}
-
 .container nav {
     padding: 1em 2em;
     display: flex;
