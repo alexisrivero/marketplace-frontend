@@ -84,8 +84,23 @@ const Carrito = () => {
         ownerName: '',
         funds: ''
     });
-    const [selectedAddress, setSelectedAddress] = useState(null);
-    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+    const [selectedAddress, setSelectedAddress] = useState({
+        addressId: '',
+        houseNumber: '',
+        street: '',
+        city: '',
+        state: '',
+    });
+    const [selectedAddressIndex, setSelectedAddressIndex] = useState(null);
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState({
+        paymentMethodId: '',
+        cardType: '',
+        cardNumber: '',
+        expirationDate: '',
+        ownerName: '',
+        funds: ''
+    });
+    const [selectedPaymentMethodIndex, setSelectedPaymentMethodIndex] = useState(null);
 
     const fetchAddresses = () => {
         fetch('http://localhost:8080/user/address', {
@@ -219,17 +234,84 @@ const Carrito = () => {
     };
 
     const handleSelectAddress = (index) => {
-        setSelectedAddress(index);
+        setSelectedAddressIndex(index);
+        setSelectedAddress(addresses[index]);
+        console.log(selectedAddress);
+        
     };
 
     const handleSelectPaymentMethod = (index) => {
-        setSelectedPaymentMethod(index);
+        setSelectedPaymentMethodIndex(index);
+        setSelectedPaymentMethod(paymentMethods[index]);
+        console.log(selectedPaymentMethod);
     }; 
 
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
+
+    const handleOrder = () => {
+        if (!selectedAddress.houseNumber || !selectedPaymentMethod.cardType) {
+            alert('Please select an address and payment method');
+            return;
+        }
+        fetch(`http://localhost:8080/checkout/address/${selectedAddress.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return console.log(response);
+        })
+        .catch(error => console.error('Error updating address:', error));
+
+        fetch(`http://localhost:8080/checkout/payment/${selectedPaymentMethod.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return console.log(response);
+        })
+        .catch(error => console.error('Error updating payment method:', error));
+
+        fetch('http://localhost:8080/checkout/purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                console.log(response.text);
+                
+                throw new Error(`HTTP error! status: ${response.status}`);
+                
+            }
+            return console.log(response);
+        }).then(data => {
+            console.log('Purchase successful:', data);
+            
+        })
+        .catch(error => {
+            console.error('Error purchasing:', error);
+            setError('Error processing purchase. Please try again later.');
+        });
+    }
+
+    const [error, setError] = useState(null);
 
     return (
         <div className='carrito'>
@@ -283,7 +365,7 @@ const Carrito = () => {
                         {addresses.map((address, index) => (
                             <li
                                 key={index}
-                                className={`address-item ${selectedAddress === index ? 'selected' : ''}`}
+                                className={`address-item ${selectedAddressIndex === index ? 'selected' : ''}`}
                                 onClick={() => handleSelectAddress(index)}
                             >
                                 {`${address.houseNumber} ${address.street}, ${address.city}, ${address.state}`}
@@ -336,8 +418,9 @@ const Carrito = () => {
                         {paymentMethods.map((method, index) => (
                             <li
                                 key={index}
-                                className={`payment-method-item ${selectedPaymentMethod === index ? 'selected' : ''}`}
+                                className={`payment-method-item ${selectedPaymentMethodIndex === index ? 'selected' : ''}`}
                                 onClick={() => handleSelectPaymentMethod(index)}
+                                
                             >
                                 {`${method.cardType} - ${method.cardNumber} - ${method.ownerName} - ${formatDate(method.expirationDate)}`}
                             </li>
@@ -413,8 +496,10 @@ const Carrito = () => {
                         <p>${data.total.toFixed(2)}</p>
                     </div>
                     <div className='button'>
-                        <button className='comprar'>Comprar</button>  
-                    </div>  
+                    
+                        <button className='comprar' onClick={handleOrder}>Comprar</button>  
+                    </div> 
+                    {error && <div className="error">{error}</div>} 
                 </div>
             
             </div>
