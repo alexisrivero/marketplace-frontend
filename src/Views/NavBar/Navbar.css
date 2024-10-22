@@ -1,6 +1,5 @@
 header {
     background-color: rgb(255, 255, 255);
-    border-bottom: 0.1em solid black;
 }
 
 .container {
@@ -8,6 +7,10 @@ header {
     width: 100%;
     margin: 0 auto;
     padding: 0;
+}
+
+.Searchbar-container {
+  align-items: center;
 }
 
 .container nav {

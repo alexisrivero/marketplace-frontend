@@ -3,8 +3,14 @@ import {FaSearch} from "react-icons/fa"
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { LuHeart } from "react-icons/lu";
 import Links from "./Links";
+import Searchresultslist from "./Searchresultslist.jsx";
+import Searchbar from "./Searchbar.jsx";
+import { useState } from "react";
 
 const Navbar = () => {
+
+    const [results, setResults] = useState([]);
+
     return (
         <header>
             <div className='container'>
@@ -14,11 +20,11 @@ const Navbar = () => {
                         <h2>Marketplace Grupo 2</h2>
                         </a>
                     </div>
-                    <div className="input-wrapper">
-                <FaSearch id = "icono-buscador" />
-                        <input type="text" placeholder="Buscar producto..." />
-                     </div>
-                    <div className="nav-link">
+                        <div className="Searchbar-container">
+                        <Searchbar setResults={setResults}/>
+                        <Searchresultslist results={results}/>
+                        </div>
+                        <div className="nav-link">
                         <a href="/carrito">
                             <AiOutlineShoppingCart size={30} />
                         </a>

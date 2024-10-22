@@ -1,27 +1,28 @@
-input-wrapper {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  padding: 0.5em;
-  width: 300px;
-  background-color: #fff;
+.input-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid #5f5f5f !important;
+  border-radius: 25px !important;
+  padding: 0.6em !important;
+  width: 450px !important;
+  background-color: #ffffff !important;
 }
 
 #icono-buscador {
-  color: #888;
+  color: rgb(255, 202, 56);
   margin-right: 0.5em;
 }
 
 input {
   border: none;
   outline: none;
+  outline: none;
   width: 100%;
   font-size: 1em;
 }
 
 input::placeholder {
-  color: #aaa;
+  color: #4e4e4e;
 }
 
 /* Estilos opcionales para hacer la barra de búsqueda más visualmente atractiva */
