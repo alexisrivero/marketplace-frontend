@@ -1,7 +1,9 @@
 .search-result {
-    padding: 10px 20px;
+    cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .search-result:hover {
-    background-color: rgb(255, 219, 171);
+    background-color: #f0f0f0; /* Cambia el fondo al pasar el mouse */
 }
