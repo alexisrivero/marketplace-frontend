@@ -11,6 +11,7 @@ import Product from './Views/Product/Product';
 import Category from './Views/Category/Category';
 import Carrito from './Views/Carrito/Carrito';
 import PrivateRoute from './Componentes/PrivateRoute/PrivateRoute';
+import User from './Views/User/User';
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
         <Route path="/category/:category" element={<Category />} />
         <Route path="/carrito" element={<PrivateRoute />}>
           <Route path='' element={<Carrito />} />
+        </Route>
+        <Route path="/user" element={<PrivateRoute />}>
+          <Route path='' element={<User />} />
         </Route>
 
       </Routes>

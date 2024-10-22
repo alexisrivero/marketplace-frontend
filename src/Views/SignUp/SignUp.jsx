@@ -7,7 +7,7 @@ import './SignUp.css';
 const SignUp = () => {
     const [formData, setFormData] = useState({
         name: '',
-        lastName:'',
+        lastName: '',
         email: '',
         password: '',
         phoneNumber: '',
@@ -62,7 +62,7 @@ const SignUp = () => {
                     <div>
                         <label htmlFor="name">Nombre:</label>
                         <input
-                            type="name"
+                            type="text"
                             id="name"
                             name="name"
                             value={formData.name}
@@ -73,7 +73,7 @@ const SignUp = () => {
                     <div>
                         <label htmlFor="lastName">Apellido:</label>
                         <input
-                            type="lastName"
+                            type="text"
                             id="lastName"
                             name="lastName"
                             value={formData.lastName}
@@ -84,7 +84,7 @@ const SignUp = () => {
                     <div>
                         <label htmlFor="email">Email:</label>
                         <input
-                            type="email"
+                            type="text"
                             id="email"
                             name="email"
                             value={formData.email}
@@ -95,7 +95,7 @@ const SignUp = () => {
                     <div>
                         <label htmlFor="phoneNumber">Numero de teléfono:</label>
                         <input
-                            type="phoneNumber"
+                            type="text"
                             id="phoneNumber"
                             name="phoneNumber"
                             value={formData.phoneNumber}

@@ -1,0 +1,51 @@
+.user-side-bar {
+    width: 300px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.side-bar-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.side-bar-title h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.side-bar-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar-content li {
+    margin-bottom: 15px;
+}
+
+.side-bar-content p {
+    font-weight: bold;
+    color: #555;
+    margin: 0 0 5px 0;
+}
+
+.side-bar-content button {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(245, 194, 55);;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.side-bar-content button:hover {
+    color: rgb(240, 191, 56);
+}
+
+.side-bar-content button:active {
+    color: rgb(240, 191, 56);
+}

@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { LuHeart } from "react-icons/lu";
+import { FaRegUser } from "react-icons/fa";
 import Links from "./Links";
 import Searchresultslist from "./Searchresultslist.jsx";
 import Searchbar from "./Searchbar.jsx";
@@ -50,8 +50,8 @@ const Navbar = () => {
                         <a href="/carrito">
                             <AiOutlineShoppingCart size={30} />
                         </a>
-                        <a href="/favoritos">
-                            <LuHeart size={30} />
+                        <a href="/user">
+                            <FaRegUser size={25} />
                         </a>
                     </div>
                 </nav>

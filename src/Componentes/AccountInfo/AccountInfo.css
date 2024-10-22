@@ -1,0 +1,45 @@
+.account-info-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.account-info-section {
+    margin-bottom: 20px;
+}
+
+.account-info-section h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.account-info-section p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.account-info-section .address,
+.account-info-section .payment-method {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.account-info-section .address h3,
+.account-info-section .payment-method h3 {
+    font-size: 1.1em;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.account-info-section .address p,
+.account-info-section .payment-method p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 3px 0;
+}
