@@ -10,7 +10,7 @@ const Contacto = () => {
         e.preventDefault();
     
         emailjs
-          .sendForm('service_zb3wash', 'template_yifi27r', form.current, {
+          .sendForm('service_2j0r4wf', 'template_ofd5c78', form.current, {
             publicKey: 'brGmm_A-pdL1z3Rbj',
           })
           .then(

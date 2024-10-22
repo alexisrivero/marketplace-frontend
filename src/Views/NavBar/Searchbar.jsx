@@ -41,16 +41,3 @@ const Searchbar = ( {setResults} ) => {
 }
 
 export default Searchbar
-
-/*
-const useEffect = (value) => {
-        fetch(URL)
-            .then(response => response.json())
-            .then((json) => {
-                const results = json.filter((user) => {
-                    re
-                }
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    }
-*/
