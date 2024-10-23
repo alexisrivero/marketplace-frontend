@@ -37,13 +37,13 @@ const Home = () => {
 
     const URL = 'http://localhost:8080/product/category/Lavarropas';
 
-    const URL2 = 'http://localhost:8080/product/category/Aires Acondicionados';
+    const URL2 = 'http://localhost:8080/product/category/climatizacion';
 
-    const URL3 = 'http://localhost:8080/product/category/Heladeras';
+    const URL3 = 'http://localhost:8080/product/category/Heladera';
 
-    const URL4 = 'http://localhost:8080/product/category/Notebooks';
+    const URL4 = 'http://localhost:8080/product/category/Notebook';
 
-    const URL5 = 'http://localhost:8080/product/category/Celulares';
+    const URL5 = 'http://localhost:8080/product/category/Celular';
 
     useEffect(() => {
         fetch(URL)
