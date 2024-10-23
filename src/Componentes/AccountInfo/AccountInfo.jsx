@@ -12,7 +12,7 @@ const AccountInfo = ( userData) => {
             <div className="account-info-container">
                 <div className="account-info-section">
                     <h2>Información de la Cuenta</h2>
-                    <p>Nombre: {userData.userData.name}</p>
+                    <p>Nombre: {userData.userData.firstName}</p>
                     <p>Apellido: {userData.userData.lastName}</p>
                     <p>Correo Electrónico: {userData.userData.email}</p>
                     <p>Teléfono: {userData.userData.phoneNumber}</p>
@@ -20,7 +20,7 @@ const AccountInfo = ( userData) => {
             
             <div className="account-info-container">
                 <div className="account-info-section">
-                    {userData.userData.addresses && userData.userData.addresses.map((address, index) => (
+                    {userData.userData.address && userData.userData.address.map((address, index) => (
                         <div key={index} className="address">
                             <h3>Dirección {address.houseNumber}</h3>
                             <p>Calle: {address.street}</p>
