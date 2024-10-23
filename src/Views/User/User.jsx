@@ -10,7 +10,7 @@ const User = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const URL = 'http://localhost:8080/user/';
+        const URL = 'http://localhost:8080/user/current';
         fetch(URL, {
             headers: {
                 'Content-Type': 'application/json',
