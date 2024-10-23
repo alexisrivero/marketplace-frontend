@@ -22,6 +22,13 @@ const Home = () => {
         {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729636809/image10_bdjzjv.jpg", title: "Publicidad10", productURL: "/product/16"}
     ]
 
+
+    const slides3 = [
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729681449/maxresdefault_1_bhdkyy.jpg", title: "Publicidad17", productURL: "/product/29"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729680023/hq720_dlaamu.jpg", title: "Publicidad18", productURL: "/product/26"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729679716/cl-feature-top-mount-freezer-rt53k6541bs-73703744_ozvnnm.avif", title: "Publicidad19", productURL: "/product/27"}
+    ]
+
     const location = useLocation(); 
 
     const [data, setData] = useState([]);
@@ -86,6 +93,7 @@ const Home = () => {
             <ProductList products={data} titulo = 'Lavarropas de calidad' />
             <Carrusel slides={slides2} />
             <ProductList products={data2} titulo = 'Lo mejor para este verano' />
+            <Carrusel slides={slides3} />
             <ProductList products={data3} titulo = 'Heladeras al mejor precio' />
             <ProductList products={data4} titulo = 'Estudia desde cualquier lado con estas Notebooks!' />
             <ProductList products={data5} titulo = 'Duración de bateria + 48hs' />
