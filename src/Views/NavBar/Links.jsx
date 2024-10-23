@@ -8,6 +8,8 @@ const Links = () => {
     const URL = 'http://localhost:8080/product/category';
 
     const [categories, setCategories] = useState([]);
+
+    const [isAdmin, setIsAdmin] = useState(false);
     
     
     useEffect(() => {
@@ -24,6 +26,23 @@ const Links = () => {
     const hideDropdown = () => {
         setDropdownVisible(false);
     };
+
+    const decodeJWT = () => {
+        const token = localStorage.getItem('token');
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    };
+
+    useEffect(() => {
+        const decodedToken = decodeJWT();
+        if (decodedToken?.rol === "ADMIN") {
+            setIsAdmin(true);
+        }
+    }, []);
 
     return (
         <section className="links"> 
@@ -44,6 +63,11 @@ const Links = () => {
                     <li>
                         <a href="/sign-up">Registrarse</a>
                     </li>
+                    {isAdmin && (
+                        <li>
+                            <a href="/add-product">Agregar productos</a>
+                        </li>
+                    )}
                 </ul>
             </nav>
             {isDropdownVisible && (

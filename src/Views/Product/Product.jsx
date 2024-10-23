@@ -6,6 +6,7 @@ const Product = () => {
     const location = useLocation();
     const URL = `http://localhost:8080${location.pathname}`;
     const navigate = useNavigate();
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -62,6 +63,42 @@ const Product = () => {
 
     }
 
+    const handleDeleteProduct = () => {
+        fetch(`http://localhost:8080/product/${data.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+        .then(data => {
+            console.log('Success:', data)
+            navigate('/');
+        })
+        .catch(error => console.error('Error:', error)); 
+    }
+
+    const decodeJWT = () => {
+        const token = localStorage.getItem('token');
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    };
+
+    useEffect(() => {
+        const decodedToken = decodeJWT();
+        if (decodedToken?.rol === "ADMIN") {
+            setIsAdmin(true);
+        }
+    }, []);
+
+    const addProductToEditToLocalStorage = () => {
+        localStorage.setItem('productToEdit', JSON.stringify(data));
+    }
+
     return (
         <div className="product">
             <img src={data.imageRoute} alt={data.name} className="product-image" />
@@ -87,6 +124,13 @@ const Product = () => {
                         <button onClick={handleIncrement}>+</button>
                     </div>
                     <button className='add-to-cart' onClick={handleAddToCart}>Agregar al carrito</button>
+                    {isAdmin && (
+                        <div>
+                            <a href="/edit-product"><button className='edit-button' onClick={addProductToEditToLocalStorage}>Editar Producto</button></a>
+                            <button className='delete-button' onClick={handleDeleteProduct}>Borrar Producto</button>
+                        </div>
+                    )}
+
                     {showAlert && <div className="alert">Producto agregado al carrito correctamente!</div>}
                 </div>
             </div>

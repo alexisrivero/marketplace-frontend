@@ -12,6 +12,8 @@ import Category from './Views/Category/Category';
 import Carrito from './Views/Carrito/Carrito';
 import PrivateRoute from './Componentes/PrivateRoute/PrivateRoute';
 import User from './Views/User/User';
+import AddProduct from './Views/Admin/AddProduct';
+import EditProduct from './Views/Admin/EditProduct/EditProduct';
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
         <Route path="/user" element={<PrivateRoute />}>
           <Route path='' element={<User />} />
         </Route>
+        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/edit-product" element={<EditProduct />} />
 
       </Routes>
       <Footer />

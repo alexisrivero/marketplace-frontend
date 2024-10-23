@@ -76,7 +76,7 @@
     font-size: 16px;
 }
 
-.add-to-cart {
+.add-to-cart, .edit-button, .delete-button{
     background-color: rgb(255, 202, 56);
     height: 30px;
     color: black;
@@ -88,7 +88,15 @@
     margin-left: 1em;
 }
 
-.add-to-cart:hover {
+.edit-button {
+    background-color: greenyellow !important;
+}
+
+.delete-button {
+    background-color: red !important;
+}
+
+.add-to-cart:hover .edit-button, .delete-button{
     background-color: rgb(245, 194, 53);
 }
 
