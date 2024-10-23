@@ -6,28 +6,14 @@ const OrderInfo = () => {
     const [error, setError] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false);
 
-    const regularUserURL = 'http://localhost:8080/order/user'
-    const adminUserURL = 'http://localhost:8080/order'
-    const URL = isAdmin ? adminUserURL : regularUserURL;
-
-    useEffect(() => {
-        fetch(URL, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-            },
-        })
-        .then(response => response.json())
-        .then(data => setOrders(data))
-        .catch(error => setError(error.message));
-    }
-    , []);
+    const REGULAR_USER_URL = "http://localhost:8080/order/user";
+    const ADMIN_USER_URL = "http://localhost:8080/order";
 
     const decodeJWT = () => {
         const token = localStorage.getItem('token');
         const base64Url = token.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
         return JSON.parse(jsonPayload);
@@ -37,10 +23,30 @@ const OrderInfo = () => {
         const decodedToken = decodeJWT();
         if (decodedToken?.rol === "ADMIN") {
             setIsAdmin(true);
+        } else {
+            setIsAdmin(false);
         }
     }, []);
 
-
+    useEffect(() => {
+        const URL = isAdmin ? ADMIN_USER_URL : REGULAR_USER_URL; 
+        if (isAdmin || !isAdmin) { 
+            fetch(URL, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error();
+                }
+                return response.json();
+            })
+            .then(data => setOrders(data))
+            .catch(error => setError(error.message));
+        }
+    }, [isAdmin]); 
 
     return (
         <div className="order-info-container">
