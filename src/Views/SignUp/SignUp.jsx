@@ -84,7 +84,7 @@ const SignUp = () => {
                     <div>
                         <label htmlFor="email">Email:</label>
                         <input
-                            type="text"
+                            type="email"
                             id="email"
                             name="email"
                             value={formData.email}
@@ -95,7 +95,7 @@ const SignUp = () => {
                     <div>
                         <label htmlFor="phoneNumber">Numero de teléfono:</label>
                         <input
-                            type="text"
+                            type="tel"
                             id="phoneNumber"
                             name="phoneNumber"
                             value={formData.phoneNumber}
