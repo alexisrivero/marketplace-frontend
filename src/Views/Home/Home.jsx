@@ -28,10 +28,22 @@ const Home = () => {
 
     const [data2, setData2] = useState([]);
 
+    const [data3, setData3] = useState([]);
 
-    const URL = 'http://localhost:8080/product';
+    const [data4, setData4] = useState([]);
 
-    const URL2 = 'http://localhost:8080/product';
+    const [data5, setData5] = useState([]);
+
+
+    const URL = 'http://localhost:8080/product/category/Lavarropas';
+
+    const URL2 = 'http://localhost:8080/product/category/Aires Acondicionados';
+
+    const URL3 = 'http://localhost:8080/product/category/Heladeras';
+
+    const URL4 = 'http://localhost:8080/product/category/Notebooks';
+
+    const URL5 = 'http://localhost:8080/product/category/Celulares';
 
     useEffect(() => {
         fetch(URL)
@@ -47,7 +59,26 @@ const Home = () => {
         .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    useEffect(() => {
+        fetch(URL3)
+        .then(response => response.json())
+        .then(data3 => setData3(data3))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
 
+    useEffect(() => {
+        fetch(URL4)
+        .then(response => response.json())
+        .then(data4 => setData4(data4))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    useEffect(() => {
+        fetch(URL5)
+        .then(response => response.json())
+        .then(data5 => setData5(data5))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
 
     return (
         <div>
@@ -55,6 +86,9 @@ const Home = () => {
             <ProductList products={data} titulo = 'Lavarropas de calidad' />
             <Carrusel slides={slides2} />
             <ProductList products={data2} titulo = 'Lo mejor para este verano' />
+            <ProductList products={data3} titulo = 'Heladeras al mejor precio' />
+            <ProductList products={data4} titulo = 'Estudia desde cualquier lado con estas Notebooks!' />
+            <ProductList products={data5} titulo = 'Duración de bateria + 48hs' />
         </div>
     )
 }
