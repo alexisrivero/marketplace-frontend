@@ -1,5 +1,4 @@
 import Carrusel from '../../Componentes/Carrusel/Carrusel';
-
 import ProductList from "../../Componentes/ProductList/ProductList";
 import './Home.css';
 import React, {useEffect, useState} from 'react';
@@ -8,19 +7,19 @@ import { useLocation } from 'react-router-dom';
 
 const Home = () => {
     const slides = [
-        {url: "http://localhost:5173/image1.jpg", title: "Publicidad1", productURL: "/product/3"},
-        {url: "http://localhost:5173/image2.jpg", title: "Publicidad2", productURL: "/product/6"},
-        {url: "http://localhost:5173/image3.jpg", title: "Publicidad3", productURL: "/product/2"},
-        {url: "http://localhost:5173/image4.jpg", title: "Publicidad4", productURL: "/product/8"},
-        {url: "http://localhost:5173/image5.jpg", title: "Publicidad5", productURL: "/product/5"}
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634968/image1_wjzkjc.jpg", title: "Publicidad1", productURL: "/product/3"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634968/image2_ylpx4h.jpg", title: "Publicidad2", productURL: "/product/6"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634969/image3_cms5ab.jpg", title: "Publicidad3", productURL: "/product/2"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634969/image4_dxgnwy.jpg", title: "Publicidad4", productURL: "/product/8"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634969/image5_xkg5i3.jpg", title: "Publicidad5", productURL: "/product/5"}
     ]
 
     const slides2 = [
-        {url: "http://localhost:5173/image6.jpg", title: "Publicidad6", productURL: "/product/13"},
-        {url: "http://localhost:5173/image7.jpg", title: "Publicidad7", productURL: "/product/14"},
-        {url: "http://localhost:5173/image8.jpg", title: "Publicidad8", productURL: "/product/12"},
-        {url: "http://localhost:5173/image9.jpg", title: "Publicidad9", productURL: "/product/15"},
-        {url: "http://localhost:5173/image10.jpg", title: "Publicidad10", productURL: "/product/16"}
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634970/image6_rveslj.jpg", title: "Publicidad6", productURL: "/product/13"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729634982/image7_ysdodc.jpg", title: "Publicidad7", productURL: "/product/14"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729635048/image8_tgrgoy.jpg", title: "Publicidad8", productURL: "/product/12"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729635010/image9_n5ivbc.jpg", title: "Publicidad9", productURL: "/product/15"},
+        {url: "https://res.cloudinary.com/dbwr86wxd/image/upload/v1729636809/image10_bdjzjv.jpg", title: "Publicidad10", productURL: "/product/16"}
     ]
 
     const location = useLocation(); 
