@@ -6,7 +6,7 @@ import SignUp from './Views/SignUp/SignUp';
 import SignIn from './Views/SignIn/SignIn';
 import Footer from './Views/Footer/Footer';
 import Contacto from './Views/Contacto/Contacto';
-import AboutUs from './Views/AboutUs/Aboutus';
+import AboutUs from './Views/AboutUs/AboutUs';
 import Product from './Views/Product/Product';
 import Category from './Views/Category/Category';
 import Carrito from './Views/Carrito/Carrito';

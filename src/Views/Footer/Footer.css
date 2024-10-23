@@ -3,9 +3,12 @@ footer{
     color: white;
     display: flex;
     padding: 2em;
-    bottom: 0;
+    /* bottom: 0; */
     width: 100%;
-    z-index: 100;
+    /* z-index: 100; */
+
+    justify-content: center;
+    align-items: center;
 }
 footer .tittle{
     padding-bottom: 1em;
@@ -49,4 +52,8 @@ footer a, footer p{
     color: white;
     text-decoration: none;
     padding-bottom: 0.5em;
+}
+
+.socials {
+    padding-bottom: 45px;
 }

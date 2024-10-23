@@ -8,12 +8,14 @@ const Footer = () => {
         <footer>
         <div className="exclusive-container">
             <div className="tittle">
-                <h3>Exclusivo</h3>
+                <h3>Ofertas</h3>
             </div>
             <div className="content">
-            <Link to="/sign-up">Registrate</Link>
+            <p>Hace tu primera compra y </p>
+            <p>Obtene un 15% de descuento</p>
+            <p>En el total de la compra</p>
             </div>
-            <p>Obtene un 15% de descuento en tu primera compra</p>
+            
         </div>
         <div className="contact-container">
             <div className="tittle">
@@ -32,16 +34,17 @@ const Footer = () => {
             <div className="content">
                 <Link to="/sign-in">Iniciar sesión</Link>
                 <Link to="/sign-up">Registrarse</Link>
+                <Link to="/about">Sobre Nosotros</Link>
             </div>
         </div>
         <div className="social-container">
             <div className="tittle">
-                <h3>Seguinos en nuestras redes</h3>
-            </div>
-            <div className="content">
+                <h3 className="socials">Seguinos en nuestras redes</h3>
+                <div className="content">
                 <Link to="facebook.com"><FaFacebookSquare size={25}/></Link>
                 <Link to="instagram.com"><FaInstagramSquare size={25}/></Link>
                 <Link to="twitter.com"><FaTwitterSquare size={25}/></Link>
+            </div>
             </div>
         </div>
 
