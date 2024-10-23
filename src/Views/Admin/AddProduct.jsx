@@ -13,6 +13,7 @@ const AddProduct = () => {
         stock: 0,
         imageRoute: ''
     });
+    
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
@@ -87,15 +88,21 @@ const AddProduct = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="category">Categoría</label>
-                    <input
-                        type="text"
+                <label htmlFor="category">Categoría</label>
+                    <select
                         id="category"
                         name="category"
                         value={product.category}
                         onChange={handleInputChange}
                         required
-                    />
+                    >
+                        <option value="">Seleccione una categoría</option>
+                        <option value="LAVARROPAS">Lavarropas</option>
+                        <option value="NOTEBOOK">Notebook</option>
+                        <option value="CLIMATIZACION">Climatizacíon</option>
+                        <option value="HELADERA">Heladera</option>
+                        <option value="CELULAR">Celular</option>
+                    </select>
                 </div>
                 <div>
                     <label htmlFor="description">Descripción</label>

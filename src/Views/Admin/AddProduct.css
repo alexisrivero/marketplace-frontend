@@ -30,7 +30,8 @@
 }
 
 .add-product-container input,
-.add-product-container textarea {
+.add-product-container textarea,
+.add-product-container select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
